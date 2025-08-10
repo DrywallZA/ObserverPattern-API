@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DjY9Iu8OjPY=",
+  "success": true,
+  "projectFilePath": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPatternAPI\\ObserverPatternAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\devau\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "C:\\Users\\devau\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
