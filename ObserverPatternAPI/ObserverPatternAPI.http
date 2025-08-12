@@ -1,6 +1,6 @@
 @ObserverPatternAPI_HostAddress = http://localhost:5124
 
-GET {{ObserverPatternAPI_HostAddress}}/weatherforecast/
+GET {{ObserverPatternAPI_HostAddress}}/Poke/
 Accept: application/json
 
 ###

@@ -80,11 +80,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPatternAPI\\ObserverPatternAPI.csproj",
+      "projectUniqueName": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPattern-API\\ObserverPatternAPI\\ObserverPatternAPI.csproj",
       "projectName": "ObserverPatternAPI",
-      "projectPath": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPatternAPI\\ObserverPatternAPI.csproj",
+      "projectPath": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPattern-API\\ObserverPatternAPI\\ObserverPatternAPI.csproj",
       "packagesPath": "C:\\Users\\devau\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPatternAPI\\obj\\",
+      "outputPath": "C:\\Personal Projects\\Upskill\\ObserverPattern_API\\ObserverPattern-API\\ObserverPatternAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\devau\\AppData\\Roaming\\NuGet\\NuGet.Config"
