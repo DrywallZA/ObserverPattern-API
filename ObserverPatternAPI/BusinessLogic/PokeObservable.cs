@@ -3,15 +3,13 @@ using ObserverPatternAPI.Interfaces;
 
 namespace ObserverPatternAPI.BusinessLogic
 {
-    public class PokeObservable : IObservable
+    public class PokeObservable : IPokeObservable
     {
         private readonly HttpClient _httpClient;
 
-        //TODO Remember to constuct this via the Program.cs
         public PokeObservable(HttpClient httpClient)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
-            _httpClient.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
 
         }
 
@@ -19,11 +17,22 @@ namespace ObserverPatternAPI.BusinessLogic
         {
             try
             {
-                var response = await _httpClient.GetStringAsync("https://pokeapi.co/api/v2/");
+                var response = await _httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/");
                 var parsedJsonDoc = JsonDocument.Parse(response);
-                // var completeQuote = parsedJsonDoc.RootElement.GetProperty("quote").GetString() ?? "No quote available";
+                var results = parsedJsonDoc.RootElement.GetProperty("results").EnumerateArray();
+                var pokemonNames = new List<string>();
 
-                // return completeQuote;
+                foreach (var result in results)
+                {
+                    var name = result.GetProperty("name").GetString();
+
+                    if (name != null)
+                    {
+                        pokemonNames.Add(name);
+                    }
+                }
+
+                //TODO Notify your observers depending on the Pokemon
                 var a = 1;
                 return default;
             }

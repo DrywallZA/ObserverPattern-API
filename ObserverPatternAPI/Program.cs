@@ -1,5 +1,8 @@
 
 
+using ObserverPatternAPI.BusinessLogic;
+using ObserverPatternAPI.Interfaces;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,6 +13,8 @@ internal class Program
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddControllers();
         builder.Services.AddOpenApi();
+        //You contruct the Observable
+        builder.Services.AddHttpClient<IPokeObservable, PokeObservable>();
 
 
 

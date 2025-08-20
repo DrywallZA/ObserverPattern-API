@@ -1,9 +1,11 @@
 namespace ObserverPatternAPI.Interfaces
 {
-    public interface IObservable
+    public interface IPokeObservable
     {
         void RegisterObserver(IObserver observer);
         void RemoveObserver(IObserver observer);
         void NotifyObserver();
+
+        Task<string> GetPokemon();
     }
 }
