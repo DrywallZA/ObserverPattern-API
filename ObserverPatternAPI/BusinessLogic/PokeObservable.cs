@@ -6,11 +6,12 @@ namespace ObserverPatternAPI.BusinessLogic
     public class PokeObservable : IPokeObservable
     {
         private readonly HttpClient _httpClient;
+        private readonly List<IObserver> _observers;
 
         public PokeObservable(HttpClient httpClient)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
-
+            _observers = new List<IObserver>();
         }
 
         public async Task<string> GetPokemon()
@@ -18,6 +19,7 @@ namespace ObserverPatternAPI.BusinessLogic
             try
             {
                 var response = await _httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/");
+                // var response = await _httpClient.GetStringAsync("pokemon/");
                 var parsedJsonDoc = JsonDocument.Parse(response);
                 var results = parsedJsonDoc.RootElement.GetProperty("results").EnumerateArray();
                 var pokemonNames = new List<string>();
@@ -31,9 +33,9 @@ namespace ObserverPatternAPI.BusinessLogic
                         pokemonNames.Add(name);
                     }
                 }
+                
+                NotifyObserver(pokemonNames);
 
-                //TODO Notify your observers depending on the Pokemon
-                var a = 1;
                 return default;
             }
             catch (System.Exception ex)
@@ -42,23 +44,23 @@ namespace ObserverPatternAPI.BusinessLogic
             }
         }
 
-        public void NotifyObserver()
+        public void NotifyObserver(List<string> data)
         {
-            throw new NotImplementedException();
+            foreach (var observer in _observers)
+            {
+                observer.Update(data);
+            };
         }
 
         public void RegisterObserver(IObserver observer)
         {
-            throw new NotImplementedException();
+            _observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            throw new NotImplementedException();
+            _observers.Remove(observer);
         }
-
-        private void GetPokemonFromAPI()
-        { }
     }
 
 }

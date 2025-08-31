@@ -4,7 +4,7 @@ namespace ObserverPatternAPI.Interfaces
     {
         void RegisterObserver(IObserver observer);
         void RemoveObserver(IObserver observer);
-        void NotifyObserver();
+        void NotifyObserver(List<string> data);
 
         Task<string> GetPokemon();
     }

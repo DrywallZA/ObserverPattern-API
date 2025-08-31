@@ -1,7 +1,7 @@
-
-
 using ObserverPatternAPI.BusinessLogic;
+using ObserverPatternAPI.Factories;
 using ObserverPatternAPI.Interfaces;
+using ObserverPatternAPI.Observers;
 
 internal class Program
 {
@@ -14,7 +14,31 @@ internal class Program
         builder.Services.AddControllers();
         builder.Services.AddOpenApi();
         //You contruct the Observable
-        builder.Services.AddHttpClient<IPokeObservable, PokeObservable>();
+        builder.Services.AddHttpClient<PokeObservable>();
+        builder.Services.AddSingleton<IPokeObservable, PokeObservable>();
+        builder.Services.AddSingleton<ObserverFactory>();
+        // builder.Services.AddHttpClient<PokeObservable>().Services.AddScoped<IPokeObservable, PokeObservable>();
+        // builder.Services.AddSingleton<IPokeObservable, PokeObservable>();
+
+        // builder.Services.AddHttpClient<PokeObservable>(client =>
+        // {
+        //     client.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
+        // }).Services.AddSingleton<IPokeObservable, PokeObservable>();
+
+        // builder.Services.AddScoped<IPokeObservable, PokeObservable>();
+
+        //We construct the Observers
+        builder.Services.AddScoped<IObserver, CharizardObserver>();
+        builder.Services.AddScoped<IObserver, IvysaurObserver>();
+        builder.Services.AddScoped<IObserver, SquirtleObserver>();
+        builder.Services.AddScoped<IObserver, WartortleObserver>();
+
+        // builder.Services.AddHttpClient<PokeObservable>().Services.AddSingleton<IPokeObservable, PokeObservable>();
+    
+        // builder.Services.AddSingleton<IObserver, CharizardObserver>();
+        // builder.Services.AddSingleton<IObserver, IvysaurObserver>();
+        // builder.Services.AddSingleton<IObserver, SquirtleObserver>();
+        // builder.Services.AddSingleton<IObserver, WartortleObserver>();
 
 
 
