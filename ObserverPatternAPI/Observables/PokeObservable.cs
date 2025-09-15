@@ -19,7 +19,6 @@ namespace ObserverPatternAPI.BusinessLogic
             try
             {
                 var response = await _httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/");
-                // var response = await _httpClient.GetStringAsync("pokemon/");
                 var parsedJsonDoc = JsonDocument.Parse(response);
                 var results = parsedJsonDoc.RootElement.GetProperty("results").EnumerateArray();
                 var pokemonNames = new List<string>();
@@ -36,9 +35,9 @@ namespace ObserverPatternAPI.BusinessLogic
                 
                 NotifyObserver(pokemonNames);
 
-                return default;
+                return "Observers notifed";
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 throw new HttpRequestException(ex.Message);
             }

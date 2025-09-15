@@ -32,3 +32,9 @@ C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPat
 C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\obj\Debug\net9.0\ObserverPatternAPI.pdb
 C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\obj\Debug\net9.0\ObserverPatternAPI.genruntimeconfig.cache
 C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\obj\Debug\net9.0\ref\ObserverPatternAPI.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\DnsClient.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\SharpCompress.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\Snappier.dll
+C:\Personal Projects\Upskill\ObserverPattern_API\ObserverPattern-API\ObserverPatternAPI\bin\Debug\net9.0\ZstdSharp.dll

@@ -21,9 +21,7 @@ namespace ObserverPatternAPI.Controllers
         [HttpGet(Name = "GetPokemon")]
         public async Task<string> GetPokemon()
         {
-            var a = await _observable.GetPokemon();
-            return default;
+            return await _observable.GetPokemon();
         }
-
     }
 }
